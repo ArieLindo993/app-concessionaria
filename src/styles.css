@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+.idTitulo {
+  font-size: 30px;
+  color: blue;
+}
+
+.classTitulo {
+  font-size: 50px;
+  color: green;
+}
