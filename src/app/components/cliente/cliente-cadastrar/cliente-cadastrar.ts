@@ -3,6 +3,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { CardModule } from 'primeng/card';
 import { SelectModule } from 'primeng/select';
+import { InputMaskModule } from 'primeng/inputmask';
+import { ButtonDirective } from 'primeng/button';
+import { Save } from '@primeicons/angular/save';
+import { Times } from '@primeicons/angular/times';
 
 @Component({
   selector: 'app-cliente-cadastrar',
@@ -10,7 +14,11 @@ import { SelectModule } from 'primeng/select';
     InputTextModule,
     FloatLabelModule,
     CardModule,
-    SelectModule
+    SelectModule,
+    InputMaskModule,
+    ButtonDirective,
+    Save,
+    Times
 ],
   templateUrl: './cliente-cadastrar.html',
   styleUrl: './cliente-cadastrar.css',
