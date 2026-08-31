@@ -1,0 +1,13 @@
+Requisitos:
+
+Instalar o NodeJs sempre na versão LTS: https://nodejs.org/en/download
+
+Instalar o Angular CLI via linha comanda (CMD, PowerShell): npm install -g @angular/cli
+
+Instalar PrimeNg: Seguir o passo a passo do link https://primeng.dev/installation
+
+ng new (nome-do-projeto) -> comando utilizado para criar um novo projeto em angular exemplo (ng new concessionaria).
+
+ng serve --o -> executa o projeto
+
+ng generate componente (caminho e nome do seu componente) -> comando utilizado para criar um componente.
