@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { CardModule } from 'primeng/card';
@@ -8,6 +8,7 @@ import { ButtonDirective } from 'primeng/button';
 import { Save } from '@primeicons/angular/save';
 import { Times } from '@primeicons/angular/times';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ClienteService } from '../cliente-service';
 
 @Component({
   selector: 'app-cliente-cadastrar',
@@ -45,6 +46,8 @@ export class ClienteCadastrar implements OnInit{
     { descricao: 'Pessoa Jurídica', valor: 'PJ'}
   ];
 
+  private readonly clienteService = inject(ClienteService);
+
   constructor(
     private readonly criadorFormulario: FormBuilder
   ) {}
@@ -80,7 +83,16 @@ export class ClienteCadastrar implements OnInit{
       console.log(this.formularioCliente.value);
       console.log('-----------------------Objeto em JSON');
       console.log(JSON.stringify(this.formularioCliente.value));
-
+      this.clienteService.salvarCliente(this.formularioCliente.value)
+        .subscribe({
+          next: (resposta:any) => {
+            console.log("Cliente salvo com sucesso!");
+            console.log(resposta);
+          },
+          error: (erroRetornado:any) => {
+            console.error("Erro ao salvar cliente: ", erroRetornado);
+          }
+        })
     }
   }
 }
